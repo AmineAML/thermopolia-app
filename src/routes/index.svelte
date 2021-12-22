@@ -4,13 +4,19 @@
 
 <script lang="ts">
 	import Counter from '$lib/Counter.svelte';
+	import Hero from '$lib/hero/Hero.svelte';
+	import Foods from '$lib/Foods.svelte';
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Thermopolia | Daily Recipes Recommendations</title>
 </svelte:head>
 
-<section>
+<Hero />
+
+<Foods />
+
+<!-- <section>
 	<h1>
 		<div class="welcome">
 			<picture>
@@ -27,33 +33,10 @@
 	</h2>
 
 	<Counter />
-</section>
+</section> -->
 
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
+<style lang="postcss">
+	.content {
+	  @apply text-lg text-gray-600;
 	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
+  </style>

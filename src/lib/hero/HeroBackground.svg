@@ -1,0 +1,12 @@
+<svg width="100%" height="100%" viewBox="0 0 1920 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="HeroBackground" clip-path="url(#clip0_5_3)">
+<rect id="Rectangle 1" x="518.404" y="1171.27" width="1889.77" height="448.219" transform="rotate(-45 518.404 1171.27)" fill="#143642"/>
+<rect id="Rectangle 2" x="1195.83" y="1125.49" width="1067.01" height="169.694" transform="rotate(-45 1195.83 1125.49)" fill="white"/>
+<rect id="Rectangle 3" x="1264" y="1296.3" width="1112" height="360.647" transform="rotate(-45 1264 1296.3)" fill="#A7201A"/>
+</g>
+<defs>
+<clipPath id="clip0_5_3">
+<rect width="1920" height="1100" fill="white"/>
+</clipPath>
+</defs>
+</svg>
