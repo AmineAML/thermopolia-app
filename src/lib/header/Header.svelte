@@ -20,7 +20,7 @@
 				<a class="btn btn-ghost btn-sm rounded-btn" href="/#diet"> Diet </a>
 			</div>
 		</div>
-		<div class={pixels > 100 ? 'flex-none scope-color-no-bg' : 'flex-none scope-color-with-bg'}>
+		<div class={$page.path === '/' ? (pixels > 100 ? 'flex-none scope-color-no-bg' : 'flex-none scope-color-with-bg') : 'flex-none scope-color-no-bg'}>
 			<button class="btn btn-square btn-ghost">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
