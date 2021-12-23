@@ -6,6 +6,8 @@
 	import Counter from '$lib/Counter.svelte';
 	import Hero from '$lib/hero/Hero.svelte';
 	import Foods from '$lib/Foods.svelte';
+	import Drinks from '$lib/Drinks.svelte';
+	import Diet from '$lib/Diet.svelte';
 </script>
 
 <svelte:head>
@@ -16,24 +18,9 @@
 
 <Foods />
 
-<!-- <section>
-	<h1>
-		<div class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</div>
+<Drinks />
 
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
-
-	<Counter />
-</section> -->
+<Diet />
 
 <style lang="postcss">
 	.content {
