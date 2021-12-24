@@ -6,10 +6,10 @@
 
 <div class="relative rounded-lg flex flex-col md:flex-row items-center md:shadow-xl md:h-72 mx-2">
 	<div
-		class="z-0 order-1 md:order-2 relative w-full md:w-2/5 h-80 md:h-full overflow-hidden rounded-lg md:rounded-none md:rounded-r-lg"
+		class="z-0 order-1 md:order-2 relative w-full md:w-1/5 h-80 md:h-full overflow-hidden rounded-lg md:rounded-none md:rounded-r-lg"
 	>
 		<div
-			class="absolute inset-0 w-full h-full object-fill object-center bg-blue-400 bg-opacity-30 bg-cover bg-bottom"
+			class="absolute inset-0 w-full h-full bg-blue-400 bg-opacity-30 bg-bottom bg-no-repeat"
 			style="background-image: url( {recipe.image} ); background-blend-mode: multiply;"
 		/>
 		<div
@@ -31,7 +31,7 @@
 		</svg>
 	</div>
 
-	<div class="order-2 md:order-1 w-full h-full md:w-3/5 flex items-center -mt-6 md:mt-0">
+	<div class="order-2 md:order-1 w-full h-full md:w-4/5 flex items-center -mt-6 md:mt-0">
 		<div
 			class="p-8 md:pr-18 md:pl-14 md:py-12 mx-2 md:mx-0 h-full bg-white rounded-lg md:rounded-none md:rounded-l-lg shadow-xl md:shadow-none w-full overflow-y-auto overflow-x-hidden scrolling-area scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100"
 		>
@@ -94,10 +94,6 @@
 		top: 50%;
 		right: 50%;
 		/* left: 0; */
-	}
-
-  	.scroll-direction {
-		  direction: ltr;
 	}
 
 	.scrolling-area {
