@@ -5,47 +5,10 @@
 
 	const { api } = variables;
 
-	export const load: Load = async ({ fetch, page }) => {
-		const res = await fetch(api + '/Newsletters/subscribers/validation/' + page.params.token);
-
-		console.log(res)
-
-		let showSpinner;
-
-		let isErr;
-
-		let errMessage;
-
-		if (res.status === 200 && res.statusText === 'OK') {
-			console.log('ok');
-			showSpinner = false
-			isErr = false
-			// return {
-			// 	props: {
-			// 		showSpinner: false,
-			// 		isErr: false
-			// 	}
-			// };
-		} else {
-			console.log('nein');
-			showSpinner = false
-			isErr = true
-			errMessage = res.statusText
-
-			// return {
-			// 	props: {
-			// 		showSpinner: false,
-			// 		isErr: true,
-			// 		errMessage: res.statusText
-			// 	}
-			// };
-		}
-
+	export const load: Load = async ({ page }) => {
 		return {
 			props: {
-				showSpinner,
-				isErr,
-				errMessage
+				token: page.params.token
 			}
 		};
 	};
@@ -54,11 +17,30 @@
 <script lang="ts">
 	import { Circle } from 'svelte-loading-spinners';
 
-	export let isErr: boolean;
+	export let token: string;
 
-	export let showSpinner: boolean = true;
+	let isErr: boolean = false;
 
-	export let errMessage: string;
+	let showSpinner: boolean = true;
+
+	let errMessage: string;
+
+	let isButtonClicked: boolean = false;
+
+	async function handleFetch() {
+		const res = await fetch(api + '/Newsletters/subscribers/validation/' + token);
+
+		if (res.status === 200 && res.statusText === 'OK') {
+			console.log('ok');
+			showSpinner = false;
+			isErr = false;
+		} else {
+			console.log('nein');
+			showSpinner = false;
+			isErr = true;
+			errMessage = res.statusText;
+		}
+	}
 </script>
 
 <section class="flex min-h-screen flex-col-reverse lg:flex-row">
@@ -67,12 +49,22 @@
 			class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center"
 		>
 			{#if showSpinner}
-				<h1
-					class="title-font sm:text-4xl text-3xl mb-4 font-medium text-black flex flex-col space-x-2"
-				>
-					Enabling your subscription
-					<Circle size="20" color="blue" unit="px" duration="1s" />
-				</h1>
+				{#if !isButtonClicked}
+					<button
+						class="inline-flex text-black py-2 px-6 focus:outline-none text-lg m-0 h-12 bg-gray-100 justify-between"
+						type="submit"
+						on:click={handleFetch}
+					>
+						Click to enable your subscription
+					</button>
+				{:else}
+					<h1
+						class="title-font sm:text-4xl text-3xl mb-4 font-medium text-black flex flex-col space-x-2"
+					>
+						Enabling your subscription
+						<Circle size="20" color="blue" unit="px" duration="1s" />
+					</h1>
+				{/if}
 			{:else if isErr}
 				<h1
 					class="title-font sm:text-4xl text-3xl mb-4 font-medium text-black flex flex-row items-center"
@@ -96,10 +88,6 @@
 					and add us as a safe contact.
 				</p>
 			{/if}
-			<!-- {#if isErr}
-			{/if} -->
-			<!-- {#if !showSpinner && !isErr}
-			{/if} -->
 		</div>
 	</div>
 </section>
