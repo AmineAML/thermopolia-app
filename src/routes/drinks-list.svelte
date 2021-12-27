@@ -1,8 +1,6 @@
 <script context="module" lang="ts">
 	export const prerender = true;
 
-	import RecipeCard from '$lib/RecipeCard.svelte';
-
 	import type { Load } from '@sveltejs/kit';
 
 	import { variables } from '$lib/variables';
@@ -31,6 +29,7 @@
 <script lang="ts">
 	import type { Recipe } from '$lib/types';
 	import SEO from '$lib/SEO.svelte';
+	import RecipeCard from '$lib/RecipeCard.svelte';
 
 	export let drinks: Recipe[];
 
