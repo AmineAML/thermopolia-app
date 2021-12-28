@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 	import { slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
+	import { goto } from '$app/navigation'
 
 	let pixels: number;
 
@@ -12,6 +13,10 @@
 	}
 
 	let searchTerm: string = '';
+
+	async function triggerHrefClick() {
+		await goto(`/recipes/?q=${searchTerm}`)
+	}
 </script>
 
 <svelte:window bind:scrollY={pixels} />
@@ -67,17 +72,17 @@
 				</button>
 			</div>
 		{:else}
-			<div class="relative">
+			<form class="relative" on:submit|preventDefault={triggerHrefClick}>
 				<input
 					type="search"
-					name="serch"
+					name="search"
 					placeholder="Search ingredients"
 					class="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none"
-					bind:value={searchTerm} disabled
+					bind:value={searchTerm}
 				/>
 				<!-- @Reference https://github.com/sveltejs/kit/issues/546 for how to trigger an on page refresh -->
-				<!-- <a class="absolute right-0 top-0 mt-3 mr-4" href={'recipes?q=' + searchTerm} target="_self"> -->
-				<a class="absolute right-0 top-0 mt-3 mr-4" href="javascript:void(0)" target="_self">
+				<a class="absolute right-0 top-0 mt-3 mr-4" href={'recipes?q=' + searchTerm}>
+				<!-- <a class="absolute right-0 top-0 mt-3 mr-4" href="javascript:void(0)" target="_self"> -->
 					<svg
 						class="h-4 w-4 fill-current"
 						xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +115,7 @@
 				/>
 			</svg> -->
 				</a>
-			</div>
+			</form>
 		{/if}
 	</div>
 </header>
