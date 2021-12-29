@@ -48,7 +48,7 @@ npm run build
 ### Deploying
 We're using [Netlify](https://www.netlify.com/) with plugins to deploy this project, deploying may differ depending on the [adapter](https://kit.svelte.dev/docs#adapters) that you may choose to use or you can use [Docker](https://www.docker.com/).
 
-## Build with
+## Built with
 - [SvelteKit](https://kit.svelte.dev/)
 - [svelte-loading-spinner](https://github.com/Schum123/svelte-loading-spinners)
 - [Tailwind CSS](https://tailwindcss.com)
