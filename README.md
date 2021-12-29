@@ -71,4 +71,4 @@ We're using [Netlify](https://www.netlify.com/) with plugins to deploy this proj
 ```
 
 ## License
-This project is license under [MIT](https://github.com/AmineAML/Portfolio/blob/main/LICENSE).
+This project is license under [MIT](https://github.com/AmineAML/thermopolia-app/blob/main/LICENSE).
