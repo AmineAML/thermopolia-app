@@ -20,15 +20,15 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={permaLink.toString()} />
 	<meta property="og:description" content={description} />
-	<meta property="og:image" content={thumbnail} />
+	<meta property="og:image" content={permaLink + thumbnail} />
 
 	<!-- Twitter meta -->
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@thermopolia_app" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content={thumbnail} />
-	<meta name="twitter:image:alt" content={thumbnail + "'s thumbnail"} />
+	<meta name="twitter:image" content={permaLink + thumbnail} />
+	<meta name="twitter:image:alt" content={title + "'s thumbnail"} />
 
 	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
 </svelte:head>
